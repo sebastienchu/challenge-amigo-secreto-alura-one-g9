@@ -16,7 +16,7 @@ function agregarAmigo(){
         
         actualizarListaAmigos();
         limpiarCampo ();
-        
+        sortearAmigo();
         return;        
     }
 // funcion para limpiar el campo de entrada  y dejar listo para agregar mas nombres
@@ -37,3 +37,18 @@ function actualizarListaAmigos(){
 
     
 }
+// funcion que realiza el sorteo
+function sortearAmigo() {
+    // implementacion del amigo aleatorio con el math random y math floor
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[indiceAleatorio];
+    document.getElementById("resultado").innerHTML = `El amigo sorteado es:${amigoSorteado}`;
+    //Validar que el array no esté vacío
+    if (amigos.length === 0) { 
+    alert('debe ingresar amigos para sortear')
+    document.getElementById("resultado").innerHTML = "No hay amigos en la lista para sortear.";
+    return;
+}
+    
+}
+
