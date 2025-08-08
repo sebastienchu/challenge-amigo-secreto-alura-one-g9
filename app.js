@@ -16,7 +16,7 @@ function agregarAmigo(){
         
         actualizarListaAmigos();
         limpiarCampo ();
-        sortearAmigo();
+        
         return;        
     }
 // funcion para limpiar el campo de entrada  y dejar listo para agregar mas nombres
@@ -51,4 +51,4 @@ function sortearAmigo() {
 }
     
 }
-
+sortearAmigo();
