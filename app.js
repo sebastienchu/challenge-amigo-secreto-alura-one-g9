@@ -33,22 +33,24 @@ function actualizarListaAmigos(){
         listado.innerHTML = amigos[i];
         listaDeAmigos.appendChild(listado);
         document.getElementById('amigo').value = "";
-    }
+    }return;
 
     
-}
+} 
+    
 // funcion que realiza el sorteo
 function sortearAmigo() {
-    // implementacion del amigo aleatorio con el math random y math floor
-    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
-    let amigoSorteado = amigos[indiceAleatorio];
-    document.getElementById("resultado").innerHTML = `El amigo sorteado es:${amigoSorteado}`;
     //Validar que el array no esté vacío
     if (amigos.length === 0) { 
-    alert('debe ingresar amigos para sortear')
+        alert('debe ingresar amigos para sortear')
     document.getElementById("resultado").innerHTML = "No hay amigos en la lista para sortear.";
-    return;
-}
+        
+    } else {
+        // implementacion del amigo aleatorio con el math random y math floor
+        let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+        let amigoSorteado = amigos[indiceAleatorio];
+        document.getElementById("resultado").innerHTML = `El amigo sorteado es:${amigoSorteado}`;
+    }return;
     
 }
-sortearAmigo();
+
